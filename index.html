@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkyBook Airlines</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HOME PAGE (VISIBLE FIRST) -->
+  <div id="home">
+    <h1>✈️ SkyBook Airlines</h1>
+    <p>Book Now, Pay Later System</p>
+    <button onclick="showPage('details')">Start Booking</button>
+  </div>
+
+  <!-- PASSENGER DETAILS -->
+  <div id="details" class="hidden">
+    <h2>Passenger Details</h2>
+
+    <input id="name" placeholder="Full Name">
+    <input id="email" placeholder="Email">
+    <input id="phone" placeholder="Phone Number">
+
+    <button onclick="showPage('flight')">Next</button>
+  </div>
+
+  <!-- FLIGHT -->
+  <div id="flight" class="hidden">
+    <h2>Flight Search</h2>
+
+    <input id="destination" placeholder="Destination">
+    <input type="date" id="date">
+
+    <select id="time">
+      <option>08:00 AM</option>
+      <option>02:00 PM</option>
+      <option>06:00 PM</option>
+    </select>
+
+    <button onclick="goSeat()">Choose Seat</button>
+  </div>
+
+  <!-- SEAT (CINEMA STYLE) -->
+  <div id="seat" class="hidden">
+    <h2>💺 Select Seat</h2>
+
+    <div class="seat-map">
+
+      <div class="row">
+        <button class="seat" onclick="selectSeat(this)">A1</button>
+        <button class="seat" onclick="selectSeat(this)">A2</button>
+        <button class="seat" onclick="selectSeat(this)">A3</button>
+      </div>
+
+      <div class="row">
+        <button class="seat" onclick="selectSeat(this)">B1</button>
+        <button class="seat" onclick="selectSeat(this)">B2</button>
+        <button class="seat" onclick="selectSeat(this)">B3</button>
+      </div>
+
+    </div>
+
+    <button onclick="goPayment()">Continue</button>
+  </div>
+
+  <!-- PAYMENT -->
+  <div id="payment" class="hidden">
+    <h2>💳 Book Now, Pay Later</h2>
+
+    <select id="plan">
+      <option>Weekly Installment</option>
+      <option>Monthly Installment</option>
+    </select>
+
+    <p>✔ Pay remaining balance before departure</p>
+
+    <button onclick="generateTicket()">Confirm Booking</button>
+  </div>
+
+  <!-- TICKET -->
+  <div id="ticketPage" class="hidden">
+    <h2>🎫 Boarding Pass</h2>
+
+    <div id="ticket"></div>
+
+    <button onclick="window.print()">🖨️ Print Ticket</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
